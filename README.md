@@ -61,6 +61,6 @@ e https://github.com/tradin-agro/micro-services-java-spring/blob/main/tradin-ped
 ## 📝 Licença
 
 Este repositório é livre, estude bastante e seja feliz!<br/>
-Em caso de dúvidas, entre em contato<br/>
+Em caso de dúvidas, entre em contato.<br/>
 Giovanni Biffi<br/>
 Tradin Ltda<br/>
