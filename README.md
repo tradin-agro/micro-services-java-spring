@@ -37,23 +37,23 @@ os projetos utilizando o comando:
 começando pelo projeto Eureka, depois Gateway, em seguida as aplicações.
 - Para testar o balanceamento use endpoint de porta http://localhost:8082/pedidos-ms/pedidos/porta
 - Antes do teste de balanceamento deverá subir uma nova instância da aplicação, informando 
-o caminho do java da sua máquina mais o comando para execução do jar instalado na pasta target do projeto Pedido.
+o caminho do java da sua máquina mais o comando para execução do jar instalado na pasta target do projeto Pedidos.
 Por exemplo: ```C:\Oracle\java\jdk-17\bin\java -jar pedidos-0.0.1-SNAPSHOT.jar br.com.tradin.pedidos.PedidosApplication```
 no prompt do Windows (se for o seu caso), o comando funcionará na pasta /target. Conforme vai
 subindo instâncias, as portas a cada requisição vão sendo alternadas.
 - Para testar o Circuit Breaker e Fallback, deverá inserir um novo pagamento e um novo pedido. O 
 pagamento inserido deve estar vinculado ao id do pedido. Derrube todas as instâncias do projeto
-pedidos e aguarde algum tempo. Depois execute o endpoint http://localhost:8082/pagamentos-ms/pagamentos/2/confirmar
+Pedidos e aguarde algum tempo. Depois execute o endpoint http://localhost:8082/pagamentos-ms/pagamentos/2/confirmar
 informando na URL o id do seu pagamento. O pagamento será salvo com o status CONFIRMADO_SEM_INTEGRACAO, e o 
 registro do pedido não terá seu status atualizado. Poderá testar também com projeto pedidos funcionando, onde
 o status do pedido será atualizado, executando normalmente a integração.
 - No endereço http://localhost:8081 vai acessar a página do Eureka server, onde poderá ver as
 instâncias de aplicação que estão rodando naquele momento. 
-- A instância do projeto gateway está configurada para rodar no endereço http://localhost:8082 e as requisições
-para os aplicativos registrados devem usar o nome de registro da aplicação, por exemplo: 
+- A instância do projeto Gateway está configurada para rodar no endereço http://localhost:8082 e as requisições
+para os aplicativos registrados devem usar o nome de registro de cada aplicação, por exemplo: 
 http://localhost:8082/pedidos-ms/pedidos e http://localhost:8082/pagamentos-ms/pagamentos
 - Seu arquivo de properties de cada projeto deve ser configurado com o seu usuário e senha do 
-banco de dados MySQL.
+banco de dados MySQL, as aplicações usam banco de dados individuais.
 - Aqui estão disponíveis os testes da API via POST MAN. Faça o download dos arquivos para importação.
   https://github.com/tradin-agro/micro-services-java-spring/blob/main/tradin-pagamentos.postman_collection
 e https://github.com/tradin-agro/micro-services-java-spring/blob/main/tradin-pedidos.postman_collection
