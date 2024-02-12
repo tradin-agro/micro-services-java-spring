@@ -7,3 +7,6 @@
 [submodule "eureka"]
 	path = eureka
 	url = https://github.com/tradin-agro/eureka.git
+[submodule "gateway"]
+	path = gateway
+	url = https://github.com/tradin-agro/gateway.git
