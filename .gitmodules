@@ -4,3 +4,6 @@
 [submodule "pedidos"]
 	path = pedidos
 	url = https://github.com/tradin-agro/pedidos.git
+[submodule "eureka"]
+	path = eureka
+	url = https://github.com/tradin-agro/eureka.git
