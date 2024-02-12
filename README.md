@@ -22,7 +22,7 @@ API Gateway para centralização de requisições, Circuit Breaker e Fallback (r
 
 - [x] Cadastro de pagamentos
 - [x] Cadastro de pedidos
-- [x] Integração de pagamentos com pedidos
+- [x] Integração síncrona de pagamentos com pedidos
 
 ### Instruções para uso da arquitetura
 
