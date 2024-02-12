@@ -54,8 +54,9 @@ para os aplicativos registrados devem usar o nome de registro da aplicação, po
 http://localhost:8082/pedidos-ms/pedidos e http://localhost:8082/pagamentos-ms/pagamentos
 - Seu arquivo de properties de cada projeto deve ser configurado com o seu usuário e senha do 
 banco de dados MySQL.
-- Aqui estão disponíveis os testes da API via POST MAN. Faça o download do arquivo para importação. 
-
+- Aqui estão disponíveis os testes da API via POST MAN. Faça o download do arquivo para importação.
+  https://github.com/tradin-agro/micro-services-java-spring/blob/main/tradin-pagamentos.postman_collection
+e https://github.com/tradin-agro/micro-services-java-spring/blob/main/tradin-pedidos.postman_collection
 ## 📝 Licença
 
 Este repositório é livre, estude bastante e seja feliz!<br/>
