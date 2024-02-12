@@ -52,6 +52,8 @@ instâncias de aplicação que estão rodando naquele momento.
 - A instância Gateway está configurada para rodar no endereço http://localhost:8082 e as requisições
 para os aplicativos registrados devem usar o nome de registro da aplicação, por exemplo: 
 http://localhost:8082/pedidos-ms/pedidos e http://localhost:8082/pagamentos-ms/pagamentos
+- Seu arquivo de properties de cada projeto deve ser configurado com o seu usuário e senha do 
+banco de dados MySQL.
 
 ## 📝 Licença
 
