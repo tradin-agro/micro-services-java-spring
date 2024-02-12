@@ -1,3 +1,6 @@
 [submodule "pagamentos"]
 	path = pagamentos
 	url = https://github.com/tradin-agro/pagamentos.git
+[submodule "pedidos"]
+	path = pedidos
+	url = https://github.com/tradin-agro/pedidos.git
