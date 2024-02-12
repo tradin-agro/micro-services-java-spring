@@ -40,12 +40,12 @@ começando pelo projeto Eureka, depois Gateway, em seguida as aplicações.
 o caminho do java da sua máquina mais o comando para execução do jar instalado na pasta target do projeto Pedidos.
 Por exemplo: ```C:\Oracle\java\jdk-17\bin\java -jar pedidos-0.0.1-SNAPSHOT.jar br.com.tradin.pedidos.PedidosApplication```
 no prompt do Windows (se for o seu caso), o comando funcionará na pasta /target. Conforme vai
-subindo instâncias, as portas a cada requisição vão sendo alternadas.
+subindo instâncias, as portas vão sendo alternadas a cada requisição.
 - Para testar o Circuit Breaker e Fallback, deverá inserir um novo pagamento e um novo pedido. O 
 pagamento inserido deve estar vinculado ao id do pedido. Derrube todas as instâncias do projeto
 Pedidos e aguarde algum tempo. Depois execute o endpoint http://localhost:8082/pagamentos-ms/pagamentos/2/confirmar
 informando na URL o id do seu pagamento. O pagamento será salvo com o status CONFIRMADO_SEM_INTEGRACAO, e o 
-registro do pedido não terá seu status atualizado. Poderá testar também com projeto pedidos funcionando, onde
+registro do pedido não terá seu status atualizado. Poderá testar também com projeto Pedidos funcionando, onde
 o status do pedido será atualizado, executando normalmente a integração.
 - No endereço http://localhost:8081 vai acessar a página do Eureka server, onde poderá ver as
 instâncias de aplicação que estão rodando naquele momento. 
