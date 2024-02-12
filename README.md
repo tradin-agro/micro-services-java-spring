@@ -1,6 +1,6 @@
 # Micro Services com Java Spring
 
-Micro services com Java Spring é um projeto fictício para teste das soluções Spring Clound.
+Micro services com Java Spring é um projeto fictício para teste das soluções Spring Cloud.
 Neste projeto foram implementadas a APIs de micro serviço, Migrations (para tratar de criação
 e versionamento dos scripts de banco de dados MySQL), Service Discovery, Balanceamento de Carga,
 API Gateway para centralização de requisições, Circuit Breaker e Fallback (resiliência a falhas).
@@ -16,7 +16,7 @@ API Gateway para centralização de requisições, Circuit Breaker e Fallback (r
 8. Model Mapper
 9. OpenFeign
 10. Resilience4J
-11. Spring OAP
+11. Spring AOP
 
 ### ⚙️ Funcionalidades
 
@@ -33,11 +33,11 @@ os projetos utilizando o comando:
 
 ```git clone --recursive https://github.com/tradin-agro/micro-services-java-spring.git```
 
-- Abra cada um dos projetos individualmente na sua IDE, e execute o arquivo main de cada projeto
+- Abra cada um dos projetos individualmente na sua IDE, e execute o arquivo main de cada projeto,
 começando pelo projeto Eureka, depois Gateway, em seguida as aplicações.
 - Para testar o balanceamento use endpoint de porta http://localhost:8082/pedidos-ms/pedidos/porta
 - Antes do teste de balanceamento deverá subir uma nova instância da aplicação, informando 
-o caminho do java da sua máquina mais o comando do jar instalado na pasta target do projeto Pedido.
+o caminho do java da sua máquina mais o comando para execução do jar instalado na pasta target do projeto Pedido.
 Por exemplo: ```C:\Oracle\java\jdk-17\bin\java -jar pedidos-0.0.1-SNAPSHOT.jar br.com.tradin.pedidos.PedidosApplication```
 no prompt do Windows (se for o seu caso), o comando funcionará na pasta /target. Conforme vai
 subindo instâncias, as portas a cada requisição vão sendo alternadas.
@@ -45,7 +45,7 @@ subindo instâncias, as portas a cada requisição vão sendo alternadas.
 pagamento inserido deve estar vinculado ao id do pedido. Derrube todas as instâncias do projeto
 pedido e aguarde algum tempo. Depois execute o endpoint http://localhost:8082/pagamentos-ms/pagamentos/2/confirmar
 informando na URL o id do seu pagamento. O pagamento será salvo com o status CONFIRMADO_SEM_INTEGRACAO, e o 
-registro do pegido não terá seu status atualizado. Poderá testar também com pedido funcionando, onde
+registro do pegido não terá seu status atualizado. Poderá testar também com projeto pedido funcionando, onde
 o status do pedido será atualizado, executando normalmente a integração.
 - No endereço http://localhost:8081 vai acessar a página do Eureka server, onde poderá ver as
 instâncias de aplicação que estão rodando naquele momento. 
@@ -54,6 +54,7 @@ para os aplicativos registrados devem usar o nome de registro da aplicação, po
 http://localhost:8082/pedidos-ms/pedidos e http://localhost:8082/pagamentos-ms/pagamentos
 - Seu arquivo de properties de cada projeto deve ser configurado com o seu usuário e senha do 
 banco de dados MySQL.
+- Aqui estão disponíveis os testes da API via POST MAN. Faça o download do arquivo para importação. 
 
 ## 📝 Licença
 
