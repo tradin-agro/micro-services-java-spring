@@ -57,6 +57,8 @@ banco de dados MySQL, as aplicações usam banco de dados individuais.
 - Aqui estão disponíveis os testes da API via POST MAN. Faça o download dos arquivos para importação.
   https://github.com/tradin-agro/micro-services-java-spring/blob/main/tradin-pagamentos.postman_collection
 e https://github.com/tradin-agro/micro-services-java-spring/blob/main/tradin-pedidos.postman_collection
+- Para adicionar um submodulo ``` git submodule add https://github.com/tradin-agro/avaliacao.git avaliacao/ ```, em seguida
+```git add .```, depois ```git commit -m "comentario"``` e ```git push```
 - ```git submodule update --remote --merge``` para atualizar submodulos, em seguida ```git add .```, 
 depois ```git commit -m "comentario"``` e ```git push```
 
