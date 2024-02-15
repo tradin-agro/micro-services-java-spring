@@ -68,7 +68,7 @@ depois ```git commit -m "comentario"``` e ```git push```
 
 ### Observações importantes
 - O projeto Avaliação não fará conexão com Eureka ou com o Gateway API. É um projeto que estará rodando
-a parte, e disponível na porta 8080.
+a parte, e disponível na porta 8080. Spring Boot v2.7.3, diferente da versão dos outros projetos.
 - O projeto RabbitMQ é um docker-compose que deverá ser inicializado via Docker, onde foram mantidas as
 configurações de acesso padrão, após executado e rodando estará disponível na porta 15672 para a conexão
 das outras aplicações.
