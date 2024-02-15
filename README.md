@@ -4,7 +4,7 @@ Micro services com Java Spring é um projeto fictício para teste das soluções
 Neste projeto foram implementadas a APIs de micro serviço, Migrations (para tratar de criação
 e versionamento dos scripts de banco de dados MySQL), Service Discovery, Balanceamento de Carga,
 API Gateway para centralização de requisições, Circuit Breaker, Fallback (resiliência a falhas) e
-Message Brker (RabbitMQ).
+Message Broker (RabbitMQ).
 
 ### 🛠 Tecnologias
 1. JDK 17
