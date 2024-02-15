@@ -3,7 +3,8 @@
 Micro services com Java Spring é um projeto fictício para teste das soluções Spring Cloud.
 Neste projeto foram implementadas a APIs de micro serviço, Migrations (para tratar de criação
 e versionamento dos scripts de banco de dados MySQL), Service Discovery, Balanceamento de Carga,
-API Gateway para centralização de requisições, Circuit Breaker e Fallback (resiliência a falhas).
+API Gateway para centralização de requisições, Circuit Breaker, Fallback (resiliência a falhas) e
+Message Brker (RabbitMQ).
 
 ### 🛠 Tecnologias
 1. JDK 17
@@ -17,12 +18,15 @@ API Gateway para centralização de requisições, Circuit Breaker e Fallback (r
 9. OpenFeign
 10. Resilience4J
 11. Spring AOP
+12. RabbitMQ (Message Brokers) v3.12
+13. Spring AMQP
 
 ### ⚙️ Funcionalidades
 
 - [x] Cadastro de pagamentos
 - [x] Cadastro de pedidos
 - [x] Integração síncrona de pagamentos com pedidos
+- [x] Integração assíncrona de pagamentos com pedidos e avaliação
 
 ### Instruções para uso da arquitetura
 
@@ -61,6 +65,40 @@ e https://github.com/tradin-agro/micro-services-java-spring/blob/main/tradin-ped
 ```git add .```, depois ```git commit -m "comentario"``` e ```git push```
 - ```git submodule update --remote --merge``` para atualizar submodulos, em seguida ```git add .```, 
 depois ```git commit -m "comentario"``` e ```git push```
+
+### Observações importantes
+- O projeto Avaliação não fará conexão com Eureka ou com o Gateway API. É um projeto que estará rodando
+a parte, e disponível na porta 8080.
+- O projeto RabbitMQ é um docker-compose que deverá ser inicializado via Docker, onde foram mantidas as
+configurações de acesso padrão, após executado e rodando estará disponível na porta 15672 para a conexão
+das outras aplicações.
+- Caso seja necessário criar novas instâncias em cluster do RabbitMQ deverá executar os comandos, agrupando
+as instâncias em um rede única:
+
+comando para criar rede:
+
+```docker network create --driver bridge tradin-rede```
+
+comando para criar novos containers do rabbitmq, substitua "rabbit-nome1" e o número da porta desejada em 8085:
+
+```docker run -d --rm --net tradin-rede --hostname rabbit-nome1 --name rabbit-nome1 -p 8085:15672 -e RABBITMQ_ERLANG_COOKIE=tradin_secret rabbitmq:3.12-management```
+
+comando para parar container que deseja fazer cluster com outro, substitua "rabbit-nome1":
+
+```docker exec -it rabbit-nome1 rabbitmqctl stop_app```
+
+comando para resetar container, substitua "rabbit-nome1":
+
+```docker exec -it rabbit-nome1 rabbitmqctl reset```
+
+comando para juntar em cluster, substitua "rabbit-nome1" e "rabbit@rabbit":
+
+```docker exec -it rabbit-nome1 rabbitmqctl join_cluster rabbit@rabbit```
+
+comando para iniciar container, substitua "rabbit-nome1":
+```docker exec -it rabbit-nome1 rabbitmqctl start_app```
+
+- Pelo docker-compose estão ativos na configuração de plugins do RabbitMQ ```rabbitmq_management,rabbitmq_prometheus, rabbitmq_shovel, rabbitmq_shovel_management```
 
 
 ## 📝 Licença
