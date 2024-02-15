@@ -10,3 +10,6 @@
 [submodule "gateway"]
 	path = gateway
 	url = https://github.com/tradin-agro/gateway.git
+[submodule "avaliacao"]
+	path = avaliacao
+	url = https://github.com/tradin-agro/avaliacao.git
