@@ -73,7 +73,7 @@ a parte, e disponível na porta 8080. Spring Boot v2.7.3, diferente da versão d
 configurações de acesso padrão, após executado e rodando estará disponível na porta 15672 para a conexão
 das outras aplicações.
 - Caso seja necessário criar novas instâncias em cluster do RabbitMQ deverá executar os comandos, agrupando
-as instâncias em um rede única:
+as instâncias em rede única:
 
 comando para criar rede:
 
