@@ -13,3 +13,6 @@
 [submodule "avaliacao"]
 	path = avaliacao
 	url = https://github.com/tradin-agro/avaliacao.git
+[submodule "rabbitmq"]
+	path = rabbitmq
+	url = https://github.com/tradin-agro/rabbitmq.git
